@@ -65,11 +65,36 @@
             </tr>
         </table>
 
-        <!-- Tombol untuk scroll ke latihan dan game -->
-        <div style="margin-top: 30px;">
-            <a href="jupiter-latihan" class="btn btn-primary">Ke Latihan</a>
-            <a href="jupiter-game" class="btn btn-info">Ke Game</a>
+        <!-- Section untuk Game Interaktif -->
+        <h3 id="game" style="font-size: 24px; margin-bottom: 15px; margin-top: 40px;">Game Interaktif: Pecahkan Balon Jupiter!</h3>
+        <div class="game-section">
+            <p>Klik pada balon untuk memecahkannya dan selesaikan game!</p>
+            <div id="balloon-container" style="margin-top: 20px; padding: 20px; background-color: #f9f9f9; display: flex; gap: 10px; flex-wrap: wrap;">
+                <!-- Balon dengan event klik -->
+                <div class="balloon" onclick="popBalloon(this)" style="width: 100px; height: 150px; background-color: red; border-radius: 50%; cursor: pointer;"></div>
+                <div class="balloon" onclick="popBalloon(this)" style="width: 100px; height: 150px; background-color: blue; border-radius: 50%; cursor: pointer;"></div>
+                <div class="balloon" onclick="popBalloon(this)" style="width: 100px; height: 150px; background-color: green; border-radius: 50%; cursor: pointer;"></div>
+                <div class="balloon" onclick="popBalloon(this)" style="width: 100px; height: 150px; background-color: yellow; border-radius: 50%; cursor: pointer;"></div>
+                <div class="balloon" onclick="popBalloon(this)" style="width: 100px; height: 150px; background-color: purple; border-radius: 50%; cursor: pointer;"></div>
+            </div>
+            <p id="game-result" style="font-weight: bold; color: blue; margin-top: 15px;"></p>
         </div>
 
+        <script>
+            let totalBalloons = 5; // Total balon yang harus dipecahkan
+            let poppedBalloons = 0;
+
+            // Function untuk memecahkan balon
+            function popBalloon(element) {
+                element.style.display = "none"; // Hilangkan balon
+                poppedBalloons++; // Tambah jumlah balon yang dipecahkan
+
+                // Cek apakah semua balon sudah dipecahkan
+                if (poppedBalloons === totalBalloons) {
+                    document.getElementById("game-result").innerHTML = "Semua balon sudah dipecahkan! Selamat!";
+                }
+            }
+        </script>
+    </div>
 </div>
 @endsection

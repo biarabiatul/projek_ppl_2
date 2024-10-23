@@ -33,3 +33,11 @@ Route::get('/matahari', function () {
 Route::get('/jupiter', function () {
     return view('jupiter');
 });
+
+Route::get('/jupiter-latihan', function () {
+    return view('jupiter-latihan');
+});
+
+Route::get('/jupiter-game', function () {
+    return view('jupiter-game');
+});
